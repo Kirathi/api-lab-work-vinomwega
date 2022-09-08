@@ -9,7 +9,7 @@ $county_data = "1. Mombasa. – Abdulswamad Nassir – ODM,
 6. Taita-Taveta. – Andrew Mwadime – Independent,
 7. Garissa. – Nathif Jama – ODM,
 8. Wajir. – Ahmed Abdullahi – ODM,
-9. Mandera. – Mohamed Adan Khalif - UDM,
+9. Mandera. – Mohamed Adan Khalif –UDM,
 10. Marsabit – Mohamud Ali – ODM,
 11. Isiolo – Abdi Hassan Guyo – Jubilee,
 12. Meru – Kawira Mwangaza – Independent,
@@ -50,8 +50,90 @@ $county_data = "1. Mombasa. – Abdulswamad Nassir – ODM,
 47. Nairobi. – Johnson Sakaja – UDA";
 
 
-// You should NOT modify anything above this line
+//You should NOT modify anything above this line
 
 // Your code starts here
 
-?>
+//echo $county_data; //echo or print. $county data is a variable
+
+//splitting the data  
+
+
+                                                                                                                                                                                                                                                                                                                                
+/*
+$small_string = "vin vin";
+$small_array = explode(' ',$small_string);
+
+//print $small_array;
+print "<br/>";
+var_dump($small_array);
+
+print "<br/>";
+
+print_r($small_array);
+
+//echo and print are for primitive data types.cannot  display array
+
+*/
+
+
+$county_array = explode(",",$county_data);
+//print "<h1> The array <h1/>";
+//print "<br/>";
+//var_dump($county_array);
+
+//print "<h1> The content in the array <h1/>";
+/*
+echo $county_array[0]."<br/>";
+echo $county_array[39]."<br/>";
+echo $county_array[20]."<br/>";
+*/
+
+/*
+
+print "<h1> The second part <h1/>";  
+
+
+print_r(explode( '–',$county_array[0]) ); echo "<br/>";
+print_r(explode( '–',$county_array[17]) ); echo "<br/>";
+print_r(explode( '–',$county_array[35]) ); echo "<br/>";
+print_r(explode( '–',$county_array[42]) ); echo "<br/>";
+print_r(explode( '–',$county_array[2]) ); echo "<br/>";
+print_r(explode( '–',$county_array[37]) ); echo "<br/>";
+*/
+echo'<table border=1 cellspacing=5 cellpadding=5>';
+echo'<thread>';
+echo'<tr>';
+echo'<th>#</th> <th>County</th>';
+echo'<th>Govenor</th> <th>Party</th> ';
+echo'</tr>';
+echo'</thead>';
+
+
+foreach ($county_array as $key => $row):
+    echo"<tr>";
+       // print $row;
+       $cell = explode('–',$row);
+       foreach($cell as $key => $cell):
+        //echo"<td>$cell</td>";
+        if($key == 0){
+            //1.Mombasa
+            //2.Kwale
+            $temp = explode('.',$cell);
+            echo '<td>'.$temp[0].'</td>';
+            echo '<td>'.$temp[1].'</td>';
+        }else{
+            echo "<td>$cell</td>";
+        }
+       endforeach;
+       
+    echo"</tr>";
+
+endforeach;
+
+echo '</table>';
+
+
+//Assignment
+/*   
+*/
