@@ -128,7 +128,7 @@ class CountyMix{
     }
 }
    
-   $testObject = new CountyMix(); 
-   echo $testObject->createTable();
-      `
-          //when you create an object,the constructor is called automically
+  // $testObject = new CountyMix(); 
+   //echo $testObject->createTable();
+      
+          //when you create an object,the constructor is called automically.
