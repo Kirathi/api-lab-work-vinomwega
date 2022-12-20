@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('test');
+   echo "<h1>Default Request</h1>";
 });
+
+Route::get('kutry', function () {
+   return view('kutry');
+   echo "<h1>Default Request</h1>";
+});
+//RoleController->all()
+//RoleController::class -  App\Http\Controllers\RoleController
+
+
+//Roles routes
+Route::get('role/all',[RoleController::class,'all']);
+Route::get('roles',[RoleController::class,'all']);
+Route::get('role/add',[RoleController::class,'add']);
+Route::get('role/edit',[RoleController::class,'edit']);
+
+//users
+Route::get('users',[UserController::class,'all']);
+
