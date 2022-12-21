@@ -7,9 +7,13 @@
 
 <div class="row">
     <div class='col-12'>
-            <a class="btn btn-primary" href="{{URL::to('role/add')}}">
+        <!--.add{display:flex} -->
+        <div class="d-flex justify-content-end">
+        <a class="btn btn-primary" href="{{URL::to('role/add')}}">
                 <i class = "fas fa-plus"></i> Add Role
             </a>
+        </div>
+           
         <div class="card mb-4">
             
             <div class="card-body px-0 pt-0 pb-2">
@@ -44,10 +48,30 @@
                     @endforelse
                   </tbody>
                 </table>
+                <div class="pagn-links">
+                    {{$roles->links()}}
+                </div>
               </div>
             </div>
         </div>
     </div>
     
 </div>
+@endsection
+
+@section('scripts')
+@if (session('status'))
+<script type="text/javascript">
+    iziToast.show({
+        title: 'Hey',
+        titleColor : 'white',
+        messageColor : 'white',
+        icon: 'fa-regular fa-circle-check',
+        iconColor : 'white',
+        backgroundColor: '#17cle8',
+        message: "{{ session('status')}}",
+        position: 'topRight'
+    });
+</script>
+@endif
 @endsection

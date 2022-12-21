@@ -32,8 +32,9 @@ Route::get('kutry', function () {
 Route::get('role/all',[RoleController::class,'all']);
 Route::get('roles',[RoleController::class,'all']);
 Route::get('role/add',[RoleController::class,'add']);
-Route::post('role/save',[RoleController::class,'save']);
-Route::get('role/edit',[RoleController::class,'edit']);
+Route::post('role/saveChanges/{id}',[RoleController::class,'saveChanges']);
+Route::get('role/edit/{id}',[RoleController::class,'edit']);
+Route::get('role/delete/{id}',[RoleController::class,'delete']);
 
 //users
 Route::get('users',[UserController::class,'all']);
