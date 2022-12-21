@@ -34,7 +34,7 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="{{URL::to('css/soft-ui-dashboard.css?v=1.0.6')}}" rel="stylesheet" />
   <link rel="stylesheet" href="{{URL::to('css/custom.css')}}">
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="{{URL::to('css/custom.css')}}">
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -42,17 +42,16 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0"  href="#" target="_blank">
-      <img src="{{URL::to('img/logo.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-
+        <img src="{{URL::to('img/logo.png')}}" class="navbar-brand-img h-100" alt="main_logo">
       </a>
     </div>
     <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="{{URL::to('/')}}">
+          <a class="nav-link {{(request()->is('/')) ? 'active' : '' }} "href="{{URL::to('/')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">      
-              <i class="fas fa-gauge"></i>
+              <i class=" nav -icon fas fa-gauge"></i>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
@@ -62,7 +61,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage Users</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{URL::to('roles')}}">
+          <a class="nav-link {{(request()->is('roles')) ? 'active' : '' }} " href="{{URL::to('roles')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="nav-icon fa-solid fa-user-gear"></i>
             </div>
@@ -70,7 +69,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{URL::to('Users')}}">
+          <a class="nav-link {{(request()->is('users')) ? 'active' : ''}} " href="{{URL::to('Users')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
           <i class="nav-icon fa-solid fa-users"></i>
             </div>
@@ -81,7 +80,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage Designs</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{URL::to('Materials')}}">
+          <a class="nav-link {{(request()->is('materials')) ? 'active' : '' }} " href="{{URL::to('Materials')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="nav-icon fa-sharp fa-solid fa-shirt"></i>
             </div>
@@ -89,7 +88,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{URL::to('Designs')}}">
+          <a class="nav-link {{(request()->is('designs')) ? 'active' : '' }} " href="{{URL::to('Designs')}}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i class="nav-icon fa-sharp fa-solid fa-scissors"></i>
             </div>
@@ -269,11 +268,11 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="{{URL::to('../assets/js/core/popper.min.js')}}"></script>
+  <script src="{{URL::to('../assets/js/core/bootstrap.min.js')}}"></script>
+  <script src="{{URL::to('../assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{URL::to('../assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+  <script src="{{URL::to('../assets/js/plugins/chartjs.min.js')}}"></script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -456,7 +455,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
+  <script src="{{URL::to('../assets/js/soft-ui-dashboard.min.js?v=1.0.6')}}"></script>
 </body>
 
 </html>

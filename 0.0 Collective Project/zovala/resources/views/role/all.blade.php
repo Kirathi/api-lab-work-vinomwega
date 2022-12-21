@@ -7,6 +7,9 @@
 
 <div class="row">
     <div class='col-12'>
+            <a class="btn btn-primary" href="{{URL::to('role/add')}}">
+                <i class = "fas fa-plus"></i> Add Role
+            </a>
         <div class="card mb-4">
             
             <div class="card-body px-0 pt-0 pb-2">
@@ -23,8 +26,8 @@
                     
                     @forelse($roles as $role)
                     <tr>
-                        <td> <p class=>"text-xs px-3 font-weight-bold mb-0">{{$role->id}}</p></td>
-                        <td><p class=>"text-xs px-3 mb-0">{{$role->name}}</p></td>
+                        <td> <p class="text-xs px-3 font-weight-bold mb-0"> {{$role->id}}</p></td>
+                        <td><p class="text-xs px-3 mb-0"> {{$role->name}}</p></td>
                         <td class="align-middle text-center text-sm">
                           <a href="{{URL::to('role/edit/'.$role->id)}}">
                             <i class="fa-solid fa-pen-to-square "></i>

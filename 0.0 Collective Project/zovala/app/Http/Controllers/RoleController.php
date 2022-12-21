@@ -21,11 +21,19 @@ class RoleController extends Controller
 
     //showing  the form to add a roles
     public function add(){
-        echo 'add method';
+        return view('role.add');
     }
 
     //process  new role data
-    public function save(){}
+    public function save(Request $request){
+        $role_name = $request->get('role_name');
+
+        $role = new Role();
+        $role->name = $role_name;
+        $role->save();
+
+        return redirect('roles');
+    }
 
     //show edit form
     public function edit(){
