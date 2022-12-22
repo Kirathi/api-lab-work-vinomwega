@@ -36,7 +36,7 @@
                           <a href="{{URL::to('role/edit/'.$role->id)}}">
                             <i class="fa-solid fa-pen-to-square "></i>
                           </a>
-                          <a href="{{URL::to('role/delete/'.$role->id)}}">
+                          <a onclick="return confirm('Are you sure?')">
                             <i class="fa-solid fa-trash "></i>
                           </a>  
                         </td>
@@ -74,4 +74,38 @@
     });
 </script>
 @endif
+<script type="text/javascript">
+    function confirm(){
+
+        iziToast.question({
+            timeout: 20000,
+            close: false,
+            overlay: true,
+            displayMode: 'once',
+            id: 'question',
+            zindex: 999,
+            title: 'Hey',
+            message: 'Are you sure about that?',
+            position: 'center',
+            buttons: [
+                ['<button><b>YES</b></button>', function (instance, toast) {
+        
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        
+                }, true],
+                ['<button>NO</button>', function (instance, toast) {
+        
+                    instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+        
+                }],
+            ],
+            onClosing: function(instance, toast, closedBy){
+                console.info('Closing | closedBy: ' + closedBy);
+            },
+            onClosed: function(instance, toast, closedBy){
+                console.info('Closed | closedBy: ' + closedBy);
+            }
+        });
+    }
+</script>
 @endsection

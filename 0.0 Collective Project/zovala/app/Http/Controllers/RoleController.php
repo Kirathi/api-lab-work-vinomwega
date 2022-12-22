@@ -76,7 +76,7 @@ class RoleController extends Controller
             $role->delete();
             return redirect('roles')->with('status',"Role deleted");
         }else{
-            return redirect('roles')->with('status',"Role does not exist");
+            return redirect('roles')->with('status',"Role does not exist!");
         }
     }
 

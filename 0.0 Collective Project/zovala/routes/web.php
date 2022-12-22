@@ -29,7 +29,7 @@ Route::get('kutry', function () {
 
 
 //Roles routes
-Route::get('role/all',[RoleController::class,'all']);
+//Route::get('role/all',[RoleController::class,'all']);
 Route::get('roles',[RoleController::class,'all']);
 Route::get('role/add',[RoleController::class,'add']);
 Route::post('role/saveChanges/{id}',[RoleController::class,'saveChanges']);
