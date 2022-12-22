@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Design;
-class DesignController extends Controller
+use App\Models\Material;
+class MaterialController extends Controller
 {
-     //showing all designs
+     //showing all materials
      public function all(){
-        //call the design model
-        $allDesigns = Design::all()->toArray();
+        //call the Material model
+        $allMaterials = Material::all()->toArray();
 
         //pass the data to the view file
     }
 
-    //showing one design
+    //showing one role
     public function one(){}
 
-    //showing the form to add a design
+    //showing the form to add a material
     public function add(){
         echo 'add method';
     }
@@ -35,7 +35,7 @@ class DesignController extends Controller
         echo 'save changes';
     }
 
-    //destroy a design from database
+    //destroy a material from database
     public function delete(){
         echo 'delete';
     }

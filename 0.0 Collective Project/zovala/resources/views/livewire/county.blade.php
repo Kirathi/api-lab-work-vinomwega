@@ -1,16 +1,11 @@
-@extends('layout')
-
-@section('headTitle','Roles - ')
-@section('pageTitle','Roles')
-
-@section('content')
-
+@section('headTitle','Counties - ')
+@section('pageTitle','Counties')
 <div class="row">
     <div class='col-12'> 
       <!-- .add{display:flex;} -->
           <div class="d-flex justify-content-end">
-            <a class="btn btn-primary" href="{{URL::to('role/add')}}">
-              <i class="fas fa-plus"></i> Add Role
+            <a class="btn btn-primary" href="{{URL::to('county/add')}}">
+              <i class="fas fa-plus"></i> Add County
             </a>
           </div>
         <div class="card mb-4">
@@ -26,16 +21,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @forelse($roles as $role)
+                    @forelse($counties as $county)
                     <tr>
-                        <td><p class="text-xs px-3 font-weight-bold mb-0">{{$role->id}}</p></td>
-                        <td><p class="text-xs px-3 mb-0">{{$role->name}}</p></td>
+                        <td><p class="text-xs px-3 font-weight-bold mb-0">{{$county->id}}</p></td>
+                        <td><p class="text-xs px-3 mb-0">{{$county->name}}</p></td>
                         <td class="align-middle text-center text-sm">
-                            <a href="{{URL::to('role/edit/'.$role->id)}}">
+                            <a href="{{URL::to('county/edit/'.$county->id)}}">
                                 <i class="fa-sharp fa-solid fa-pen-to-square"></i>
                             </a>
                             <!-- @TODO : Use a javascript library for this-->
-                            <a onclick="return confirm('Are you sure?')" href="{{URL::to('role/delete/'.$role->id)}}">
+                            <a onclick="return confirm('Are you sure?')" href="{{URL::to('county/delete/'.$county->id)}}">
                                 <i class="fa-solid fa-trash"></i>
                             </a>
                         </td> 
@@ -48,29 +43,10 @@
                   </tbody>
                 </table>
                 <div class="pagn-links">
-                  {{$roles->links()}}
+                  {{$counties->links()}}
                 </div>
               </div>
             </div>
         </div>
     </div>
 </div>
-
-@endsection
-
-  @section('scripts')
-  @if(session('status'))
-    <script type="text/javascript">
-      iziToast.show({
-        titleColor: 'white',
-        messageColor: 'white',
-        icon: 'fa-regular fa-circle-check',
-        iconColor: 'white',
-        backgroundColor: 'blue',
-        message: "{{session('status')}}",
-        position: 'topRight'
-    });
-    </script>
-  @endif
-  
-@endsection

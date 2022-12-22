@@ -35,6 +35,7 @@
   <link id="pagestyle" href="{{URL::to('css/soft-ui-dashboard.css?v=1.0.6')}}" rel="stylesheet" />
   <link rel="stylesheet" href="{{URL::to('css/custom.css')}}">
   <link rel="stylesheet" href="{{URL::to('css/app.css')}}">
+  @livewireStyles
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -57,6 +58,33 @@
           </a>
         </li>
 
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage Locations</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{(request()->is('count*')) ? 'active' : '' }} " href="{{URL::to('counties')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="nav-icon fa-solid fa-location-dot"></i>
+            </div>
+            <span class="nav-link-text ms-1">Counties</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{(request()->is('subcount*')) ? 'active' : '' }} " href="{{URL::to('subcounties')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="nav-icon fa-solid fa-map-location"></i>
+            </div>
+            <span class="nav-link-text ms-1">Sub counties</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{(request()->is('town*')) ? 'active' : '' }} " href="{{URL::to('towns')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="nav-icon fa-solid fa-map-pin"></i>
+            </div>
+            <span class="nav-link-text ms-1">Towns</span>
+          </a>
+        </li>
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage Users</h6>
         </li>
@@ -211,7 +239,11 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
+
        @yield('content')
+       <!-- Livewire-->
+       {{$slot}}
+
       <footer class="footer pt-3">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -464,6 +496,7 @@
   <script src="{{URL::to('../assets/js/soft-ui-dashboard.min.js?v=1.0.6')}}"></script>
   <script src="{{URL::to('../assets/js/app.js')}}"></script>
   @yield('scripts')
+  @livewireScripts
 </body>
 
 </html>

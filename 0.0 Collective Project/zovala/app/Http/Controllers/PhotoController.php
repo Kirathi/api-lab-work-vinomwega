@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Design;
-class DesignController extends Controller
+use App\Models\Photo;
+class PhotoController extends Controller
 {
-     //showing all designs
+     //showing all photos
      public function all(){
-        //call the design model
-        $allDesigns = Design::all()->toArray();
+        //call the Photo model
+        $allPhotos = Photo::all()->toArray();
 
         //pass the data to the view file
     }
 
-    //showing one design
+    //showing one photo
     public function one(){}
 
-    //showing the form to add a design
+    //showing the form to add a photo
     public function add(){
         echo 'add method';
     }
@@ -35,7 +35,7 @@ class DesignController extends Controller
         echo 'save changes';
     }
 
-    //destroy a design from database
+    //destroy a photo from database
     public function delete(){
         echo 'delete';
     }

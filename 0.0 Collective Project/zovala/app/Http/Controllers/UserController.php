@@ -3,32 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\user;
+use App\Models\User;
 class UserController extends Controller
 {
-    //showing all the user
+     //showing all users
      public function all(){
-        echo"<h2>Within the All method</h2>";
-        // call the user model
-        $allUsers = User::all();
-         
-        dd($allUsers);
-     }
-    //showing one User
-    public function one (){}
+        //call the User model
+        $allUsers = User::all()->toArray();
 
-    //showing  the form to add a Users
-    public function add(){}
+        //pass the data to the view file
+    }
 
-    //process  new User data
+    //showing one user
+    public function one(){}
+
+    //showing the form to add a user
+    public function add(){
+        echo 'add method';
+    }
+
+    //process data
     public function save(){}
 
     //show edit form
-    public function edit(){}
+    public function edit(){
+        echo 'edit method';
+    }
 
     //process edits
-    public function saveChanges(){}
+    public function saveChanges(){
+        echo 'save changes';
+    }
 
-    //destroy a User 
-    public function delete(){}
+    //destroy a user from database
+    public function delete(){
+        echo 'delete';
+    }
 }

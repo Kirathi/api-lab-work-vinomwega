@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Design;
-class DesignController extends Controller
+use App\Models\Payment;
+class PaymentController extends Controller
 {
-     //showing all designs
+     //showing all payments
      public function all(){
-        //call the design model
-        $allDesigns = Design::all()->toArray();
+        //call the Payment model
+        $allPayments = Payment::all()->toArray();
 
         //pass the data to the view file
     }
 
-    //showing one design
+    //showing one Payment
     public function one(){}
 
-    //showing the form to add a design
+    //showing the form to add a Payment
     public function add(){
         echo 'add method';
     }
@@ -35,7 +35,7 @@ class DesignController extends Controller
         echo 'save changes';
     }
 
-    //destroy a design from database
+    //destroy a Payment from database
     public function delete(){
         echo 'delete';
     }

@@ -3,21 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Design;
-class DesignController extends Controller
+use App\Models\Rating;
+class RatingController extends Controller
 {
-     //showing all designs
+     //showing all ratings
      public function all(){
-        //call the design model
-        $allDesigns = Design::all()->toArray();
+        //call the Rating model
+        $allRatings = Rating::all()->toArray();
 
         //pass the data to the view file
     }
 
-    //showing one design
+    //showing one rating
     public function one(){}
 
-    //showing the form to add a design
+    //showing the form to add a rating
     public function add(){
         echo 'add method';
     }
@@ -35,7 +35,7 @@ class DesignController extends Controller
         echo 'save changes';
     }
 
-    //destroy a design from database
+    //destroy a rating from database
     public function delete(){
         echo 'delete';
     }

@@ -1,10 +1,11 @@
 <?php
+//database
 $books  = [
     'author 1' => ['title 1','title 2'],
     'author 2' => ['title 3'],
     'author 3' => ['title 4','title 5']
 ];
-
+//@ - used to supress warnings
 @$request = $_GET['value'];
 if(isset($_GET['value'])){
     $results = $books[$request];

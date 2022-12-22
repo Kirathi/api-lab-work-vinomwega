@@ -25,7 +25,7 @@
   --bs-gray-500: #adb5bd;
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
-  --bs-gray-800: #343a40;
+  --bs-gray-800: #0f1820;
   --bs-gray-900: #212529;
   --bs-primary: #cb0c9f;
   --bs-secondary: #8392AB;
@@ -22523,7 +22523,7 @@ hr.horizontal.gray-light {
 .navbar-vertical.navbar-expand-xs .navbar-collapse {
   display: block;
   overflow: auto;
-  height: calc(100vh - 360px);
+  /*height: calc(100vh - 360px);*/
 }
 
 .navbar-vertical.navbar-expand-xs>[class*="container"] {
