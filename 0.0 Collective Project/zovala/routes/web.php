@@ -12,6 +12,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\SubCountyController;
 use App\Http\Controllers\TownController;
+use App\Http\Controllers\AjaxController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\County;
 use App\Http\Livewire\SubCounty;
@@ -51,11 +52,16 @@ Route::get('counties',County::class);
 
 //subcounty
 Route::get('subcounties',SubCounty::class);
+Route::post('fetch-subcounties',[AjaxController::class,'getSubCounties']);
 //towns
 Route::get('towns',Town::class);
+Route::post('fetch-towns',[AjaxController::class,'getTowns']);
+
+Route::post('authRegister',[UserController::class,'authRegister']);
 //users
 Route::get('users',[UserController::class,'all']);
-
+Route::get('login',[UserController::class,'login']);
+Route::get('register',[UserController::class,'register']);
 
 Route::get('county',[CountyController::class,'all']);
 

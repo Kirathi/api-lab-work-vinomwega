@@ -1,42 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\County;
+use App\Models\SubCounty;
+use App\Models\Town;
 use Illuminate\Http\Request;
-use App\Models\User;
+
 class UserController extends Controller
 {
-     //showing all users
-     public function all(){
-        //call the User model
-        $allUsers = User::all()->toArray();
-
-        //pass the data to the view file
+    public function all(){
+        echo "<h1>Within the All method</h1>";
     }
 
-    //showing one user
-    public function one(){}
-
-    //showing the form to add a user
-    public function add(){
-        echo 'add method';
+    public function login(){
+        return view('user.login');
     }
 
-    //process data
-    public function save(){}
-
-    //show edit form
-    public function edit(){
-        echo 'edit method';
+    public function register(){
+        $counties = County::all();
+        return view('user.register',['counties' => $counties]);
     }
 
-    //process edits
-    public function saveChanges(){
-        echo 'save changes';
-    }
-
-    //destroy a user from database
-    public function delete(){
-        echo 'delete';
+    public function authRegister(Request $request){
+        $request->validate([
+            'surname' => 'required|alpha',
+            'other_names' => 'required',
+            'username' => 'required',
+            'email' => 'required',
+            'gender' => 'required',
+            'phone' => 'required',
+            'county' => 'required',
+            'subcounty' => 'required',
+            'town' => 'required',
+            'password' => 'required',
+        ]);
     }
 }
